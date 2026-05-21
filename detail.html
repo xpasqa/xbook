@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Buku | Publion Research</title>
+    <meta name="description" content="Detail buku Publion Research." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              onest: ['"Onest"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-onest bg-white text-slate-950 antialiased">
+    <div id="site-header"></div>
+
+    <main class="min-h-screen">
+      <section class="mx-auto max-w-screen-2xl px-4 py-6 sm:px-6 lg:px-8">
+        <nav class="text-sm text-slate-500" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-slate-950">Katalog</a>
+          <span class="mx-2">/</span>
+          <span id="breadcrumb-title" class="text-slate-700">Detail Buku</span>
+        </nav>
+      </section>
+
+      <section id="book-detail" class="mx-auto max-w-screen-2xl px-4 pb-12 sm:px-6 lg:px-8" aria-live="polite">
+        <div class="rounded-md border border-slate-200 px-6 py-12 text-center text-sm text-slate-600">Memuat detail buku...</div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/js/supabase-config.js"></script>
+    <script type="module">
+      import { renderLayout } from "/js/layout.js";
+      renderLayout("catalog");
+    </script>
+    <script type="module" src="/js/detail.js"></script>
+  </body>
+</html>

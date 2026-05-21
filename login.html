@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Publion Books</title>
+    <meta name="description" content="Login dashboard Publion Books." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              onest: ['"Onest"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-onest bg-slate-50 text-slate-950 antialiased">
+    <div id="site-header"></div>
+
+    <main class="mx-auto flex min-h-[70vh] max-w-screen-2xl items-center px-4 py-10 sm:px-6 lg:px-8">
+      <section class="mx-auto w-full max-w-md rounded-md bg-white p-6 shadow-sm ring-1 ring-slate-200">
+        <h1 class="text-2xl font-bold tracking-tight text-slate-950">Login Dashboard</h1>
+        <p class="mt-2 text-sm leading-6 text-slate-600">
+          Masuk untuk menambahkan buku dan metadata detail ke katalog.
+        </p>
+
+        <div id="auth-alert" class="mt-5 hidden rounded-md border px-4 py-3 text-sm"></div>
+
+        <form id="auth-form" class="mt-6 space-y-4">
+          <label class="block">
+            <span class="text-sm font-semibold text-slate-700">Email</span>
+            <input
+              id="email"
+              type="email"
+              required
+              class="mt-1 h-11 w-full rounded-md border border-slate-300 px-3 text-sm outline-none transition focus:border-slate-950 focus:ring-2 focus:ring-slate-200"
+              placeholder="editor@publion.id"
+            />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-slate-700">Password</span>
+            <input
+              id="password"
+              type="password"
+              required
+              minlength="6"
+              class="mt-1 h-11 w-full rounded-md border border-slate-300 px-3 text-sm outline-none transition focus:border-slate-950 focus:ring-2 focus:ring-slate-200"
+              placeholder="Minimal 6 karakter"
+            />
+          </label>
+          <div class="grid grid-cols-2 gap-3 pt-2">
+            <button
+              id="signin-button"
+              type="submit"
+              value="signin"
+              class="rounded-md bg-slate-950 px-4 py-3 text-sm font-semibold text-white transition hover:bg-teal-600"
+            >
+              Login
+            </button>
+            <button
+              id="signup-button"
+              type="submit"
+              value="signup"
+              class="rounded-md border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
+            >
+              Buat Akun
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/js/supabase-config.js"></script>
+    <script type="module">
+      import { renderLayout } from "/js/layout.js";
+      renderLayout("login");
+    </script>
+    <script type="module" src="/js/auth.js"></script>
+  </body>
+</html>

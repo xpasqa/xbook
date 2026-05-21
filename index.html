@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katalog Buku | Publion Research</title>
+    <meta
+      name="description"
+      content="Katalog buku Publion Research. Jelajahi judul, penulis, sinopsis, ISBN, dan harga buku."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              onest: ['"Onest"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-onest bg-white text-slate-950 antialiased">
+    <div id="site-header"></div>
+
+    <main>
+      <section class="border-b border-slate-200 bg-white">
+        <div class="relative isolate overflow-hidden bg-slate-950">
+          <div class="absolute inset-0 opacity-25">
+            <div class="grid h-full grid-cols-6 gap-3 px-4 py-6 sm:grid-cols-8 lg:grid-cols-12">
+              <img src="/images/1.jpg" alt="" class="h-full w-full rounded-md object-cover" />
+              <img src="/images/2.jpg" alt="" class="h-full w-full rounded-md object-cover" />
+              <img src="/images/3.jpg" alt="" class="h-full w-full rounded-md object-cover" />
+              <img src="/images/4.jpg" alt="" class="h-full w-full rounded-md object-cover" />
+              <img src="/images/5.jpg" alt="" class="hidden h-full w-full rounded-md object-cover sm:block" />
+              <img src="/images/6.jpg" alt="" class="hidden h-full w-full rounded-md object-cover sm:block" />
+              <img src="/images/7.jpg" alt="" class="hidden h-full w-full rounded-md object-cover lg:block" />
+              <img src="/images/8.jpg" alt="" class="hidden h-full w-full rounded-md object-cover lg:block" />
+              <img src="/images/9.jpg" alt="" class="hidden h-full w-full rounded-md object-cover lg:block" />
+              <img src="/images/10.jpg" alt="" class="hidden h-full w-full rounded-md object-cover lg:block" />
+              <img src="/images/keteguhan-sunyi.png" alt="" class="hidden h-full w-full rounded-md object-cover lg:block" />
+              <img src="/images/ansp-fajar-1.jpeg" alt="" class="hidden h-full w-full rounded-md object-cover lg:block" />
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-slate-950/75"></div>
+          <div class="relative mx-auto flex min-h-[320px] max-w-screen-2xl flex-col items-center justify-center px-4 py-16 text-center sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">Buku Membuka Ruang Pikir</h1>
+            <p class="mt-4 max-w-2xl text-sm leading-6 text-slate-200 sm:text-base">
+              Jelajahi katalog Publion Research, temukan judul yang relevan, lalu buka cover untuk membaca detail buku.
+            </p>
+          </div>
+        </div>
+
+        <div class="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
+          <form id="catalog-filters" class="grid grid-cols-1 gap-3 md:grid-cols-4" autocomplete="off">
+            <label class="block">
+              <span class="sr-only">Cari judul atau penulis</span>
+              <input
+                id="search-input"
+                type="search"
+                placeholder="Cari judul, penulis, kata kunci"
+                class="h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-slate-950 focus:ring-2 focus:ring-slate-200"
+              />
+            </label>
+            <label class="block">
+              <span class="sr-only">Kategori</span>
+              <select
+                id="category-filter"
+                class="h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-900 outline-none transition focus:border-slate-950 focus:ring-2 focus:ring-slate-200"
+              >
+                <option value="">Semua kategori</option>
+              </select>
+            </label>
+            <label class="block">
+              <span class="sr-only">Rentang harga</span>
+              <select
+                id="price-filter"
+                class="h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-900 outline-none transition focus:border-slate-950 focus:ring-2 focus:ring-slate-200"
+              >
+                <option value="">Semua harga</option>
+                <option value="under-100000">&lt; Rp 100.000</option>
+                <option value="100000-150000">Rp 100.000 - Rp 150.000</option>
+                <option value="over-150000">&gt; Rp 150.000</option>
+              </select>
+            </label>
+            <label class="block">
+              <span class="sr-only">Urutkan</span>
+              <select
+                id="sort-filter"
+                class="h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-900 outline-none transition focus:border-slate-950 focus:ring-2 focus:ring-slate-200"
+              >
+                <option value="latest">Terbaru</option>
+                <option value="title">Judul A-Z</option>
+                <option value="price-asc">Harga termurah</option>
+                <option value="price-desc">Harga termahal</option>
+              </select>
+            </label>
+          </form>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
+        <div class="mb-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p id="catalog-count" class="text-sm font-medium text-slate-600">Memuat katalog...</p>
+          <p id="catalog-source" class="text-xs text-slate-500"></p>
+        </div>
+
+        <div
+          id="book-grid"
+          class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6"
+          aria-live="polite"
+        ></div>
+
+        <div id="empty-state" class="hidden rounded-md border border-dashed border-slate-300 px-6 py-16 text-center">
+          <h2 class="text-lg font-semibold text-slate-950">Buku tidak ditemukan</h2>
+          <p class="mt-2 text-sm text-slate-600">Coba ubah pencarian, kategori, atau rentang harga.</p>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/js/supabase-config.js"></script>
+    <script type="module">
+      import { renderLayout } from "/js/layout.js";
+      renderLayout("catalog");
+    </script>
+    <script type="module" src="/js/catalog.js"></script>
+  </body>
+</html>

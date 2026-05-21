@@ -1,0 +1,2 @@
+window.PUBLION_SUPABASE_URL = "https://bwbbecuxhbdzsswdmpur.supabase.co";
+window.PUBLION_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ3YmJlY3V4aGJkenNzd2RtcHVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkzNTgzODIsImV4cCI6MjA5NDkzNDM4Mn0.VFxYPtSQ4Mo6khZhx2cYCjZ5KDTLl3CvoK9ReNV2gqQ";

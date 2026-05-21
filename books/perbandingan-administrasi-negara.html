@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perbandingan Administrasi Negara | Publion Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;700&display=swap" rel="stylesheet" />
+    <script src="../components/header.js"></script>
+    <script src="/components/style.js"></script>
+  </head>
+  <body class="font-onest bg-white text-gray-900">
+    <div id="header"></div>
+
+    <!-- Breadcrumbs -->
+    <section class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <nav class="text-sm text-gray-500">
+        <a href="/index.html" class="hover:text-gray-700">Beranda</a>
+        <span class="mx-2">/</span>
+        <a href="/katalog-buku.html" class="hover:text-gray-700">Katalog Buku</a>
+        <span class="mx-2">/</span>
+        <span class="text-gray-700">Perbandingan Administrasi Negara / Sektor Publik </span>
+      </nav>
+    </section>
+
+    <!-- Book Detail -->
+    <section class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-1">
+          <div class="relative bg-gray-50 rounded-lg shadow-sm overflow-hidden group">
+            <div id="book-cover-slider" class="flex transition-transform duration-500 ease-in-out">
+              <img src="/images/ansp-fajar-1.jpeg" alt="Cover depan buku Administrasi Sektor Publik" class="w-full aspect-[5/8] object-cover shrink-0" />
+              <img src="/images/ansp-fajar-3.jpeg" alt="Cover belakang buku Administrasi Sektor Publik" class="w-full aspect-[5/8] object-cover shrink-0" />
+            </div>
+
+            <button type="button" id="prev-cover" class="absolute left-3 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-white/80 text-gray-900 shadow hover:bg-white transition opacity-90 md:opacity-0 md:group-hover:opacity-100" aria-label="Cover sebelumnya">
+              ‹
+            </button>
+            <button type="button" id="next-cover" class="absolute right-3 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-white/80 text-gray-900 shadow hover:bg-white transition opacity-90 md:opacity-0 md:group-hover:opacity-100" aria-label="Cover berikutnya">
+              ›
+            </button>
+
+            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+              <button type="button" class="cover-dot h-2 w-2 rounded-full bg-white shadow ring-1 ring-gray-300" aria-label="Lihat cover depan"></button>
+              <button type="button" class="cover-dot h-2 w-2 rounded-full bg-white/50 shadow ring-1 ring-gray-300" aria-label="Lihat cover belakang"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2">
+          <h1 class="text-3xl font-bold text-gray-900">Perbandingan Administrasi Negara / Sektor Publik</h1>
+          <p class="mt-2 text-sm text-gray-500">Penulis: Fadjar Trisakti</p>
+
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-gray-50 rounded-lg p-4">
+              <p class="text-xs uppercase tracking-wide text-gray-500">Harga</p>
+              <p class="mt-1 text-lg font-semibold text-gray-900">Rp 60.000</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4">
+              <p class="text-xs uppercase tracking-wide text-gray-500">ISBN</p>
+              <p class="mt-1 text-lg font-semibold text-gray-900">Dalam Proses Pengajuan</p>
+            </div>
+          </div>
+          <a href="#" class="mt-4 inline-flex w-full justify-center px-4 py-3 text-sm font-medium text-white bg-black rounded-md hover:bg-blue-700 transition">
+            Beli Buku
+          </a>
+
+          <div class="mt-6">
+            <h2 class="text-xl font-semibold text-gray-900">Sinopsis</h2>
+            <p class="mt-2 text-gray-700 leading-relaxed">
+              Bagaimana negara mengelola pemerintahan yang efektif di tengah perbedaan budaya, politik, dan sistem sosial? Buku Perbandingan Administrasi Negara/Sektor Publik menghadirkan jawaban melalui pendekatan yang jelas dan mudah dipahami. Dengan menggabungkan konsep dasar, teori, dan contoh perbandingan nyata, buku ini membantu pembaca melihat bagaimana sistem administrasi negara bekerja di berbagai negara. Pembahasan mencakup birokrasi, sektor publik, hubungan pusat dan daerah, hingga dinamika administrasi di kawasan ASEAN. Ringkas, sistematis, dan relevan, buku ini cocok untuk mahasiswa, akademisi, maupun pembaca umum yang ingin memahami bagaimana pemerintahan dijalankan dan bagaimana praktik terbaik dapat dipelajari dari negara lain.
+
+            </p>
+          </div>
+
+          <div class="mt-8">
+            <h2 class="text-xl font-semibold text-gray-900">Kata Kunci</h2>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="text-xs px-3 py-1 bg-gray-100 rounded-full">administrasi publik</span>
+              <span class="text-xs px-3 py-1 bg-gray-100 rounded-full">sektor publik</span>
+              <span class="text-xs px-3 py-1 bg-gray-100 rounded-full">birokrasi</span>
+              <span class="text-xs px-3 py-1 bg-gray-100 rounded-full">pelayanan publik</span>
+              <span class="text-xs px-3 py-1 bg-gray-100 rounded-full">tata kelola</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script src="/components/footer.js"></script>
+    <script>
+      const coverSlider = document.getElementById("book-cover-slider");
+      const prevCoverButton = document.getElementById("prev-cover");
+      const nextCoverButton = document.getElementById("next-cover");
+      const coverDots = document.querySelectorAll(".cover-dot");
+      let activeCoverIndex = 0;
+      const totalCovers = 2;
+
+      function updateCoverSlider() {
+        coverSlider.style.transform = `translateX(-${activeCoverIndex * 100}%)`;
+        coverDots.forEach((dot, index) => {
+          dot.classList.toggle("bg-white", index === activeCoverIndex);
+          dot.classList.toggle("bg-white/50", index !== activeCoverIndex);
+        });
+      }
+
+      prevCoverButton.addEventListener("click", () => {
+        activeCoverIndex = (activeCoverIndex - 1 + totalCovers) % totalCovers;
+        updateCoverSlider();
+      });
+
+      nextCoverButton.addEventListener("click", () => {
+        activeCoverIndex = (activeCoverIndex + 1) % totalCovers;
+        updateCoverSlider();
+      });
+
+      coverDots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          activeCoverIndex = index;
+          updateCoverSlider();
+        });
+      });
+    </script>
+  </body>
+</html>
