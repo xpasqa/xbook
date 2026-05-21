@@ -137,16 +137,16 @@ function sortBooks(a, b) {
 function renderBookCard(book) {
   const detailUrl = getBookUrl(book.slug);
   return `
-    <article class="group">
-      <a href="${detailUrl}" class="block overflow-hidden rounded-md bg-slate-100 shadow-sm ring-1 ring-slate-200 transition group-hover:-translate-y-0.5 group-hover:shadow-md">
+    <article class="group overflow-hidden rounded-lg bg-slate-50 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md">
+      <a href="${detailUrl}" class="block overflow-hidden bg-slate-100">
         <img src="${book.cover_url}" alt="${escapeHtml(book.cover_alt)}" class="aspect-[3/4] w-full object-cover transition duration-300 group-hover:scale-[1.03]" loading="lazy" />
       </a>
-      <div class="pt-3">
+      <div class="p-4">
         <a href="${detailUrl}" class="line-clamp-2 text-sm font-bold leading-5 text-slate-950 hover:text-teal-700">${escapeHtml(book.title)}</a>
-        <p class="mt-1 line-clamp-1 text-xs text-slate-500">${escapeHtml(book.author)}</p>
-        <div class="mt-3 flex items-center justify-between gap-2">
-          <span class="text-xs font-bold text-slate-950">${book.price_label}</span>
-          <span class="rounded-full bg-slate-100 px-2 py-1 text-[11px] font-medium text-slate-600">${escapeHtml(book.category || "Umum")}</span>
+        <p class="mt-1 line-clamp-1 text-xs leading-5 text-slate-500">${escapeHtml(book.author)}</p>
+        <div class="mt-4 flex flex-col gap-2">
+          <span class="text-sm font-bold text-slate-950">${book.price_label}</span>
+          <span class="w-fit rounded-full bg-white px-2.5 py-1 text-[11px] font-semibold text-slate-600 ring-1 ring-slate-200">${escapeHtml(book.category || "Umum")}</span>
         </div>
       </div>
     </article>

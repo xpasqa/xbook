@@ -1,21 +1,4 @@
-export const sampleBooks = [
-  {
-    slug: "administrasi-sektor",
-    title: "Administrasi Sektor Publik",
-    author: "Fadjar Trisakti",
-    category: "Administrasi Publik",
-    price: 110000,
-    isbn: "Dalam Proses Pengajuan",
-    short_description: "Administrasi publik untuk pelayanan profesional dan akuntabel.",
-    synopsis:
-      "Buku ini mengulas administrasi sektor publik dalam konteks perubahan tata kelola pemerintahan modern. Penulis membahas prinsip-prinsip administrasi publik, birokrasi, manajemen pelayanan, serta akuntabilitas dan transparansi dalam penyelenggaraan negara. Isu reformasi birokrasi, pelayanan publik berbasis kinerja, dan pemanfaatan teknologi digital dijelaskan dengan bahasa yang sistematis dan aplikatif. Buku ini juga menyoroti tantangan administrasi publik di negara berkembang, termasuk koordinasi antar lembaga dan responsivitas terhadap kebutuhan warga. Cocok sebagai referensi mahasiswa, aparatur sipil negara, dan praktisi kebijakan publik.",
-    keywords: ["administrasi publik", "sektor publik", "birokrasi", "pelayanan publik", "tata kelola"],
-    cover_url: "/images/10.jpg",
-    gallery_urls: ["/images/10.jpg"],
-    buy_url: "",
-    published: true,
-    sort_order: 1,
-  },
+export const sampleBooks = [np
   {
     slug: "ekonomi-pembangunan",
     title: "Ekonomi & Pembangunan Lokal",

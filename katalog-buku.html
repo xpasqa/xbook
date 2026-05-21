@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katalog Buku | Publion Research</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Onest -->
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind Custom Font Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              onest: ['"Onest"', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <script src="components/header.js"></script>
+  </head>
+  <body class="font-onest bg-white text-gray-900">
+    <div id="header"></div>
+
+    <!-- Hero -->
+    <section class="bg-gray-100">
+      <div class="max-w-screen-xl mx-auto px-6 sm:px-8 lg:px-10 py-12 text-center">
+        <h1 class="text-4xl font-bold text-gray-900">Katalog Buku</h1>
+        <p class="mt-3 text-base text-gray-700 max-w-2xl mx-auto">
+          Jelajahi koleksi buku terkurasi dari penerbit kami. Gunakan filter untuk menemukan judul yang sesuai.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="max-w-screen-xl mx-auto px-6 sm:px-8 lg:px-10 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <input type="text" placeholder="Cari judul atau penulis" class="w-full border border-gray-200 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-300" />
+        <select class="w-full border border-gray-200 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-300">
+          <option>Kategori</option>
+          <option>Metodologi</option>
+          <option>Kebijakan Publik</option>
+          <option>Sosial & Budaya</option>
+          <option>Komunikasi</option>
+        </select>
+        <select class="w-full border border-gray-200 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-300">
+          <option>Rentang Harga</option>
+          <option>< Rp 100.000</option>
+          <option>Rp 100.000 - Rp 200.000</option>
+          <option>> Rp 200.000</option>
+        </select>
+        <select class="w-full border border-gray-200 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-300">
+          <option>Urutkan</option>
+          <option>Terbaru</option>
+          <option>Terpopuler</option>
+          <option>Harga Termurah</option>
+          <option>Harga Termahal</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Book Grid -->
+    <section class="max-w-screen-xl mx-auto px-6 sm:px-8 lg:px-10 pb-12">
+      <div class="flex items-center justify-between mb-6">
+        <p class="text-sm text-gray-500">Menampilkan 10 buku</p>
+        <a href="#" class="text-sm font-medium text-blue-600 hover:underline">Download Katalog (PDF)</a>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <article class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+          <a href="/books/metode-riset.html" class="block overflow-hidden">
+            <img src="images/1.jpg" alt="Cover buku Metode Riset Modern" class="w-full aspect-[3/4] object-cover transition-transform duration-300 hover:scale-105" />
+          </a>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-gray-900">Metode Riset Modern</h3>
+            <p class="mt-1 text-sm text-gray-500">Dr. Anisa Putri, MA</p>
+            <p class="mt-2 text-sm text-gray-700">Panduan ringkas desain riset, pengumpulan data, dan penulisan ilmiah.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-sm font-semibold text-gray-900">Rp 150.000</span>
+              <a href="/books/metode-riset.html" class="text-sm font-medium text-blue-600 hover:underline">Detail</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+          <a href="/books/kebijakan-publik.html" class="block overflow-hidden">
+            <img src="images/2.jpg" alt="Cover buku Kebijakan Publik & Dampak Sosial" class="w-full aspect-[3/4] object-cover transition-transform duration-300 hover:scale-105" />
+          </a>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-gray-900">Kebijakan Publik & Dampak Sosial</h3>
+            <p class="mt-1 text-sm text-gray-500">Prof. Raka Santoso, MPP</p>
+            <p class="mt-2 text-sm text-gray-700">Studi kasus kebijakan dan pengaruhnya terhadap komunitas lokal.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-sm font-semibold text-gray-900">Rp 150.000</span>
+              <a href="/books/kebijakan-publik.html" class="text-sm font-medium text-blue-600 hover:underline">Detail</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+          <a href="/books/masa-depan.html" class="block overflow-hidden">
+            <img src="images/3.jpg" alt="Cover buku Masa Depan Regional" class="w-full aspect-[3/4] object-cover transition-transform duration-300 hover:scale-105" />
+          </a>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-gray-900">Masa Depan Regional</h3>
+            <p class="mt-1 text-sm text-gray-500">Haikal Valino</p>
+            <p class="mt-2 text-sm text-gray-700">Membahas identitas lokal, budaya, dan dinamika perubahan wilayah.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-sm font-semibold text-gray-900">Rp 90.000</span>
+              <a href="/books/masa-depan.html" class="text-sm font-medium text-blue-600 hover:underline">Detail</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+          <a href="/books/etika-akademik.html" class="block overflow-hidden">
+            <img src="images/4.jpg" alt="Cover buku Etika Akademik" class="w-full aspect-[3/4] object-cover transition-transform duration-300 hover:scale-105" />
+          </a>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-gray-900">Etika Akademik</h3>
+            <p class="mt-1 text-sm text-gray-500">Hendra Pratama, M.Pd.</p>
+            <p class="mt-2 text-sm text-gray-700">Prinsip integritas, sitasi, dan etika riset untuk peneliti muda.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-sm font-semibold text-gray-900">Rp 120.000</span>
+              <a href="/books/etika-akademik.html" class="text-sm font-medium text-blue-600 hover:underline">Detail</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+          <a href="/books/strategi-publikasi.html" class="block overflow-hidden">
+            <img src="images/5.jpg" alt="Cover buku Strategi Publikasi Ilmiah" class="w-full aspect-[3/4] object-cover transition-transform duration-300 hover:scale-105" />
+          </a>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-gray-900">Strategi Publikasi Ilmiah</h3>
+            <p class="mt-1 text-sm text-gray-500">Nadia Rahman, Ph.D.</p>
+            <p class="mt-2 text-sm text-gray-700">Tips memilih jurnal, menyusun naskah, dan merespons reviewer.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-sm font-semibold text-gray-900">Rp 110.000</span>
+              <a href="/books/strategi-publikasi.html" class="text-sm font-medium text-blue-600 hover:underline">Detail</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+          <a href="/books/ekonomi-pembangunan.html" class="block overflow-hidden">
+            <img src="images/6.jpg" alt="Cover buku Ekonomi & Pembangunan Lokal" class="w-full aspect-[3/4] object-cover transition-transform duration-300 hover:scale-105" />
+          </a>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-gray-900">Ekonomi & Pembangunan Lokal</h3>
+            <p class="mt-1 text-sm text-gray-500">Agus Siregar, M.Sc.</p>
+            <p class="mt-2 text-sm text-gray-700">Kerangka kerja pembangunan daerah berbasis data dan kolaborasi.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-sm font-semibold text-gray-900">Rp 140.000</span>
+              <a href="/books/ekonomi-pembangunan.html" class="text-sm font-medium text-blue-600 hover:underline">Detail</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+          <a href="/books/sosiologi-perkotaan.html" class="block overflow-hidden">
+            <img src="images/7.jpg" alt="Cover buku Sosiologi Perkotaan" class="w-full aspect-[3/4] object-cover transition-transform duration-300 hover:scale-105" />
+          </a>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-gray-900">Sosiologi Perkotaan</h3>
+            <p class="mt-1 text-sm text-gray-500">Maya Lestari, M.Sos.</p>
+            <p class="mt-2 text-sm text-gray-700">Membahas mobilitas, ruang kota, dan dinamika komunitas urban.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-sm font-semibold text-gray-900">Rp 150.000</span>
+              <a href="/books/sosiologi-perkotaan.html" class="text-sm font-medium text-blue-600 hover:underline">Detail</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+          <a href="/books/politik-global.html" class="block overflow-hidden">
+            <img src="images/8.jpg" alt="Cover buku Politik Global Kontemporer" class="w-full aspect-[3/4] object-cover transition-transform duration-300 hover:scale-105" />
+          </a>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-gray-900">Politik Global Kontemporer</h3>
+            <p class="mt-1 text-sm text-gray-500">Dimas Prakoso, M.I.P.</p>
+            <p class="mt-2 text-sm text-gray-700">Analisis tren geopolitik, diplomasi, dan isu lintas batas.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-sm font-semibold text-gray-900">Rp 150.000</span>
+              <a href="/books/politik-global.html" class="text-sm font-medium text-blue-600 hover:underline">Detail</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+          <a href="/books/kontekstual-teaching.html" class="block overflow-hidden">
+            <img src="images/9.jpg" alt="Cover buku Kontekstual Teaching" class="w-full aspect-[3/4] object-cover transition-transform duration-300 hover:scale-105" />
+          </a>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-gray-900">Kontekstual Teaching</h3>
+            <p class="mt-1 text-sm text-gray-500">Wati Susilawati</p>
+            <p class="mt-2 text-sm text-gray-700">Pembelajaran kontekstual agar proses belajar relevan dan bermakna.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-sm font-semibold text-gray-900">Rp 110.000</span>
+              <a href="/books/kontekstual-teaching.html" class="text-sm font-medium text-blue-600 hover:underline">Detail</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-gray-50 rounded-lg shadow-sm overflow-hidden">
+          <a href="/books/administrasi-sektor.html" class="block overflow-hidden">
+            <img src="images/10.jpg" alt="Cover buku Administrasi Sektor Publik" class="w-full aspect-[3/4] object-cover transition-transform duration-300 hover:scale-105" />
+          </a>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-gray-900">Administrasi Sektor Publik</h3>
+            <p class="mt-1 text-sm text-gray-500">Fadjar Trisakti</p>
+            <p class="mt-2 text-sm text-gray-700">Administrasi publik untuk pelayanan profesional dan akuntabel.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-sm font-semibold text-gray-900">Rp 110.000</span>
+              <a href="/books/administrasi-sektor.html" class="text-sm font-medium text-blue-600 hover:underline">Detail</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Pagination -->
+    <section class="max-w-screen-xl mx-auto px-6 sm:px-8 lg:px-10 pb-16">
+      <div class="flex items-center justify-between text-sm text-gray-600">
+        <span>Halaman 1 dari 3</span>
+        <div class="flex items-center gap-2">
+          <button class="px-3 py-2 border border-gray-300 rounded-md hover:bg-gray-100">Sebelumnya</button>
+          <button class="px-3 py-2 border border-gray-300 rounded-md hover:bg-gray-100">Berikutnya</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script src="components/footer.js"></script>
+  </body>
+</html>
