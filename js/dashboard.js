@@ -10,7 +10,6 @@ const submitButton = document.getElementById("submit-book");
 const cancelEditButton = document.getElementById("cancel-edit-button");
 const editorPanel = document.getElementById("editor-panel");
 const editorTitle = document.getElementById("editor-title");
-const slugPreview = document.getElementById("slug-preview");
 const titleInput = document.getElementById("title");
 
 let books = [];
@@ -33,7 +32,6 @@ async function initDashboard() {
   }
 
   cancelEditButton.addEventListener("click", closeEditor);
-  titleInput.addEventListener("input", updateSlugPreview);
   form.addEventListener("submit", handleSubmit);
   adminBooks.addEventListener("click", handleTableClick);
 
@@ -165,7 +163,6 @@ function openEditEditor(book) {
   form.elements.keywords.value = (book.keywords || []).join(", ");
   form.elements.buy_url.value = book.buy_url || "";
   form.elements.published.checked = Boolean(book.published);
-  slugPreview.textContent = `URL buku: /${book.slug}`;
   showEditor();
 }
 
@@ -180,13 +177,6 @@ function closeEditor() {
   document.getElementById("published").checked = true;
   editorPanel.classList.add("hidden");
   submitButton.textContent = "Simpan Buku";
-  updateSlugPreview();
-}
-
-function updateSlugPreview() {
-  if (editingBook) return;
-  const slug = slugify(titleInput.value);
-  slugPreview.textContent = slug ? `URL buku: /${slug}` : "URL akan dibuat otomatis dari judul.";
 }
 
 function getNextSortOrder() {

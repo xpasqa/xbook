@@ -4,7 +4,6 @@ import { getCurrentSession, isSupabaseConfigured } from "/js/supabase-client.js"
 
 const form = document.getElementById("book-form");
 const titleInput = document.getElementById("title");
-const slugPreview = document.getElementById("slug-preview");
 const alertBox = document.getElementById("page-alert");
 const submitButton = document.getElementById("submit-book");
 
@@ -26,7 +25,6 @@ async function initPage() {
   }
 
   existingBooks = await fetchAdminBooks();
-  titleInput.addEventListener("input", updateSlugPreview);
   form.addEventListener("submit", handleSubmit);
 }
 
@@ -84,11 +82,6 @@ async function handleSubmit(event) {
   } finally {
     setLoading(false);
   }
-}
-
-function updateSlugPreview() {
-  const slug = slugify(titleInput.value);
-  slugPreview.textContent = slug ? `URL buku: /${slug}` : "URL akan dibuat otomatis dari judul.";
 }
 
 function getNextSortOrder() {

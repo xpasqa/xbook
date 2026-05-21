@@ -21,7 +21,7 @@ export async function fetchPublishedBooks() {
     return {
       books: localBooks,
       source: "sample",
-      message: "Menampilkan data lokal. Isi js/supabase-config.js untuk membaca dari Supabase.",
+      message: "",
     };
   }
 
@@ -37,7 +37,7 @@ export async function fetchPublishedBooks() {
     return {
       books: localBooks,
       source: "fallback",
-      message: "Supabase belum bisa dibaca. Menampilkan data lokal.",
+      message: "",
     };
   }
 
@@ -49,7 +49,7 @@ export async function fetchPublishedBooks() {
   return {
     books: [...mergedBooks.values()],
     source: "supabase",
-    message: "Data lokal + buku tambahan dari Supabase.",
+    message: "",
   };
 }
 
