@@ -144,7 +144,6 @@ function renderBookCard(book) {
       <div class="pt-3">
         <a href="${detailUrl}" class="line-clamp-2 text-sm font-bold leading-5 text-slate-950 hover:text-teal-700">${escapeHtml(book.title)}</a>
         <p class="mt-1 line-clamp-1 text-xs text-slate-500">${escapeHtml(book.author)}</p>
-        <p class="mt-2 line-clamp-2 text-xs leading-5 text-slate-600">${escapeHtml(book.short_description || "")}</p>
         <div class="mt-3 flex items-center justify-between gap-2">
           <span class="text-xs font-bold text-slate-950">${book.price_label}</span>
           <span class="rounded-full bg-slate-100 px-2 py-1 text-[11px] font-medium text-slate-600">${escapeHtml(book.category || "Umum")}</span>

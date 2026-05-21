@@ -4,8 +4,6 @@ const form = document.getElementById("auth-form");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const alertBox = document.getElementById("auth-alert");
-const signinButton = document.getElementById("signin-button");
-const signupButton = document.getElementById("signup-button");
 
 initAuth();
 
@@ -22,41 +20,24 @@ async function initAuth() {
   const session = await getCurrentSession();
   if (session) window.location.href = "/dashboard.html";
 
-  if (new URLSearchParams(window.location.search).get("mode") === "register") {
-    signinButton.classList.remove("bg-slate-950", "text-white", "hover:bg-teal-600");
-    signinButton.classList.add("border", "border-slate-300", "text-slate-900", "hover:bg-slate-100");
-    signupButton.classList.remove("border", "border-slate-300", "text-slate-900", "hover:bg-slate-100");
-    signupButton.classList.add("bg-slate-950", "text-white", "hover:bg-teal-600");
-    showAlert("neutral", "Isi email dan password, lalu klik Buat Akun.");
-  }
-
   form.addEventListener("submit", handleSubmit);
 }
 
 async function handleSubmit(event) {
   event.preventDefault();
-  const action = event.submitter?.value || "signin";
   const email = emailInput.value.trim();
   const password = passwordInput.value;
   const supabase = await getSupabase();
 
   setLoading(true);
-  showAlert("neutral", action === "signup" ? "Membuat akun..." : "Memproses login...");
+  showAlert("neutral", "Memproses login...");
 
-  const result =
-    action === "signup"
-      ? await supabase.auth.signUp({ email, password })
-      : await supabase.auth.signInWithPassword({ email, password });
+  const result = await supabase.auth.signInWithPassword({ email, password });
 
   setLoading(false);
 
   if (result.error) {
     showAlert("error", result.error.message);
-    return;
-  }
-
-  if (action === "signup" && !result.data.session) {
-    showAlert("success", "Akun dibuat. Cek email jika Supabase meminta konfirmasi, lalu login.");
     return;
   }
 
