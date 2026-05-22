@@ -1,4 +1,4 @@
-import { getCurrentSession, getSupabase, isSupabaseConfigured } from "/js/supabase-client.js";
+import { getCurrentSession, getSupabase, isSupabaseConfigured } from "./supabase-client.js";
 
 const form = document.getElementById("auth-form");
 const emailInput = document.getElementById("email");

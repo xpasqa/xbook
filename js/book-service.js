@@ -1,5 +1,5 @@
-import { formatRupiah, sampleBooks } from "/js/books-data.js";
-import { getSupabase, isSupabaseConfigured } from "/js/supabase-client.js";
+import { formatRupiah, sampleBooks } from "./books-data.js";
+import { getSupabase, isSupabaseConfigured } from "./supabase-client.js";
 
 export function normalizeBook(book) {
   const gallery = Array.isArray(book.gallery_urls) && book.gallery_urls.length > 0 ? book.gallery_urls : [book.cover_url];

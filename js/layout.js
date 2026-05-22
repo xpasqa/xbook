@@ -1,4 +1,4 @@
-import { getCurrentSession, getSupabase, isSupabaseConfigured } from "/js/supabase-client.js";
+import { getCurrentSession, getSupabase, isSupabaseConfigured } from "./supabase-client.js";
 
 const navItems = [
   { href: "https://publion.org/", label: "Home", key: "home" },
@@ -18,8 +18,8 @@ async function renderHeader(activeKey) {
   if (!header) return;
 
   header.innerHTML = `
-    <header class="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div class="mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header class="sticky top-0 z-30 border-b border-slate-200 bg-white/95 px-4 backdrop-blur sm:px-6 lg:px-8">
+      <div class="mx-auto flex h-16 max-w-screen-xl items-center justify-between">
         <a href="/" class="text-base font-bold tracking-tight text-slate-950 sm:text-lg">Publion Books</a>
         <nav class="hidden items-center gap-1 md:flex" aria-label="Navigasi utama">
           ${navItems
@@ -64,8 +64,8 @@ function renderFooter() {
   if (!footer) return;
 
   footer.innerHTML = `
-    <footer class="mt-12 border-t border-slate-200 bg-slate-950 text-white">
-      <div class="mx-auto grid max-w-screen-2xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-3 lg:px-8">
+    <footer class="mt-12 border-t border-slate-200 bg-slate-950 px-4 text-white sm:px-6 lg:px-8">
+      <div class="mx-auto grid max-w-screen-xl gap-8 py-10 md:grid-cols-3">
         <div>
           <h2 class="text-lg font-bold">Publion Research</h2>
           <p class="mt-3 max-w-sm text-sm leading-6 text-slate-300">Empowering knowledge through accessible and impactful research publications.</p>

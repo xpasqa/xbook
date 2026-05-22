@@ -18,6 +18,7 @@ create table if not exists public.books (
   cover_alt text not null default '',
   gallery_urls text[] not null default '{}',
   buy_url text not null default '',
+  google_books_url text not null default '',
   published boolean not null default false,
   sort_order integer not null default 999,
   created_by uuid default auth.uid() references auth.users(id) on delete set null,
@@ -25,6 +26,9 @@ create table if not exists public.books (
   updated_at timestamptz not null default now(),
   constraint books_slug_format check (slug ~ '^[a-z0-9]+(?:-[a-z0-9]+)*$')
 );
+
+alter table public.books
+  add column if not exists google_books_url text not null default '';
 
 create index if not exists books_published_sort_idx
   on public.books (sort_order, created_at desc)

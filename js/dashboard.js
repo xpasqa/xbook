@@ -1,6 +1,6 @@
-import { slugify } from "/js/books-data.js";
-import { createBook, fetchAdminBooks, updateBook, uploadCover } from "/js/book-service.js";
-import { getCurrentSession, isSupabaseConfigured } from "/js/supabase-client.js";
+import { slugify } from "./books-data.js";
+import { createBook, fetchAdminBooks, updateBook, uploadCover } from "./book-service.js";
+import { getCurrentSession, isSupabaseConfigured } from "./supabase-client.js";
 
 const form = document.getElementById("book-form");
 const alertBox = document.getElementById("dashboard-alert");
@@ -80,6 +80,7 @@ async function handleSubmit(event) {
       cover_alt: `Cover buku ${title}`,
       gallery_urls: galleryUrls,
       buy_url: String(formData.get("buy_url") || "").trim(),
+      google_books_url: String(formData.get("google_books_url") || "").trim(),
       published: formData.get("published") === "on",
       sort_order: editingBook?.sort_order || getNextSortOrder(),
     };
@@ -162,6 +163,7 @@ function openEditEditor(book) {
   form.elements.synopsis.value = book.synopsis || "";
   form.elements.keywords.value = (book.keywords || []).join(", ");
   form.elements.buy_url.value = book.buy_url || "";
+  form.elements.google_books_url.value = book.google_books_url || "";
   form.elements.published.checked = Boolean(book.published);
   showEditor();
 }

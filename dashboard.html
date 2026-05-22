@@ -24,7 +24,7 @@
   <body class="font-onest bg-slate-50 text-slate-950 antialiased">
     <div id="site-header"></div>
 
-    <main class="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
+    <main class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
       <div class="mb-8 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <h1 class="text-3xl font-bold tracking-tight text-slate-950">Dashboard Buku</h1>
@@ -142,6 +142,11 @@
               <input id="buy_url" name="buy_url" class="form-input" placeholder="https://..." />
             </label>
 
+            <label class="block md:col-span-2">
+              <span class="text-sm font-semibold text-slate-700">Link Google Books</span>
+              <input id="google_books_url" name="google_books_url" class="form-input" placeholder="https://books.google.com/..." />
+            </label>
+
             <label class="flex items-center gap-3 md:col-span-2">
               <input id="published" name="published" type="checkbox" checked class="h-4 w-4 rounded border-slate-300 text-slate-950 focus:ring-slate-950" />
               <span class="text-sm font-semibold text-slate-700">Publikasikan langsung di katalog</span>
@@ -194,11 +199,11 @@
         transition: border-color 150ms ease, box-shadow 150ms ease;
       }
     </style>
-    <script src="/js/supabase-config.js"></script>
+    <script src="js/supabase-config.js"></script>
     <script type="module">
-      import { renderLayout } from "/js/layout.js";
+      import { renderLayout } from "./js/layout.js";
       renderLayout("dashboard");
     </script>
-    <script type="module" src="/js/dashboard.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
-import { slugify } from "/js/books-data.js";
-import { createBook, fetchAdminBooks, uploadCover } from "/js/book-service.js";
-import { getCurrentSession, isSupabaseConfigured } from "/js/supabase-client.js";
+import { slugify } from "./books-data.js";
+import { createBook, fetchAdminBooks, uploadCover } from "./book-service.js";
+import { getCurrentSession, isSupabaseConfigured } from "./supabase-client.js";
 
 const form = document.getElementById("book-form");
 const titleInput = document.getElementById("title");
@@ -69,6 +69,7 @@ async function handleSubmit(event) {
       cover_alt: `Cover buku ${title}`,
       gallery_urls: galleryUrls,
       buy_url: String(formData.get("buy_url") || "").trim(),
+      google_books_url: String(formData.get("google_books_url") || "").trim(),
       published: formData.get("published") === "on",
       sort_order: getNextSortOrder(),
     });
