@@ -34,6 +34,38 @@
 
     <div id="site-footer"></div>
 
+    <style>
+      .order-input {
+        margin-top: 0.25rem;
+        height: 2.75rem;
+        width: 100%;
+        border-radius: 0.375rem;
+        border: 1px solid rgb(203 213 225);
+        padding: 0 0.75rem;
+        font-size: 0.875rem;
+        outline: none;
+        transition: border-color 150ms ease, box-shadow 150ms ease;
+      }
+
+      .order-textarea {
+        margin-top: 0.25rem;
+        width: 100%;
+        border-radius: 0.375rem;
+        border: 1px solid rgb(203 213 225);
+        padding: 0.75rem;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        outline: none;
+        resize: vertical;
+        transition: border-color 150ms ease, box-shadow 150ms ease;
+      }
+
+      .order-input:focus,
+      .order-textarea:focus {
+        border-color: rgb(2 6 23);
+        box-shadow: 0 0 0 2px rgb(226 232 240);
+      }
+    </style>
     <script src="js/supabase-config.js"></script>
     <script type="module">
       import { renderLayout } from "./js/layout.js";

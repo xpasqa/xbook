@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cek Invoice | Publion Books</title>
+    <meta name="description" content="Cek status invoice pembelian buku Publion Books." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              onest: ['"Onest"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-onest bg-slate-50 text-slate-950 antialiased">
+    <div id="site-header"></div>
+
+    <main class="px-4 py-10 sm:px-6 lg:px-8">
+      <section class="mx-auto max-w-screen-xl">
+        <div class="mx-auto max-w-2xl">
+          <h1 class="text-3xl font-bold tracking-tight text-slate-950">Cek Invoice</h1>
+          <p class="mt-2 text-sm leading-6 text-slate-600">Masukkan nomor invoice untuk melihat status pembelian buku.</p>
+
+          <form id="invoice-form" class="mt-6 flex flex-col gap-3 rounded-md bg-white p-3 shadow-sm ring-1 ring-slate-200 sm:flex-row">
+            <label class="block flex-1">
+              <span class="sr-only">Nomor invoice</span>
+              <input
+                id="invoice-input"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                required
+                class="h-12 w-full rounded-md border border-slate-300 px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-slate-950 focus:ring-2 focus:ring-slate-200"
+                placeholder="Masukkan no invoice"
+              />
+            </label>
+            <button id="invoice-submit" type="submit" class="inline-flex h-12 items-center justify-center rounded-md bg-slate-950 px-5 text-sm font-semibold text-white transition hover:bg-teal-600">
+              Cek Invoice
+            </button>
+          </form>
+
+          <div id="invoice-alert" class="mt-5 hidden rounded-md border px-4 py-3 text-sm"></div>
+
+          <section id="invoice-result" class="mt-6 hidden rounded-md bg-white p-5 shadow-sm ring-1 ring-slate-200" aria-live="polite"></section>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/supabase-config.js"></script>
+    <script type="module">
+      import { renderLayout } from "./js/layout.js";
+      renderLayout("catalog");
+    </script>
+    <script type="module" src="js/cek-invoice.js"></script>
+  </body>
+</html>
