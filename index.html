@@ -28,78 +28,51 @@
     <div id="site-header"></div>
 
     <main>
-      <section class="border-b border-slate-200 bg-white">
-        <div class="relative isolate overflow-hidden bg-slate-950">
-          <div class="absolute inset-0 opacity-25">
-            <div class="grid h-full grid-cols-6 gap-3 px-4 py-6 sm:grid-cols-8 lg:grid-cols-12">
-              <img src="/images/1.jpg" alt="" class="h-full w-full rounded-md object-cover" />
-              <img src="/images/2.jpg" alt="" class="h-full w-full rounded-md object-cover" />
-              <img src="/images/3.jpg" alt="" class="h-full w-full rounded-md object-cover" />
-              <img src="/images/4.jpg" alt="" class="h-full w-full rounded-md object-cover" />
-              <img src="/images/5.jpg" alt="" class="hidden h-full w-full rounded-md object-cover sm:block" />
-              <img src="/images/6.jpg" alt="" class="hidden h-full w-full rounded-md object-cover sm:block" />
-              <img src="/images/7.jpg" alt="" class="hidden h-full w-full rounded-md object-cover lg:block" />
-              <img src="/images/8.jpg" alt="" class="hidden h-full w-full rounded-md object-cover lg:block" />
-              <img src="/images/9.jpg" alt="" class="hidden h-full w-full rounded-md object-cover lg:block" />
-              <img src="/images/10.jpg" alt="" class="hidden h-full w-full rounded-md object-cover lg:block" />
-              <img src="/images/keteguhan-sunyi.png" alt="" class="hidden h-full w-full rounded-md object-cover lg:block" />
-              <img src="/images/ansp-fajar-1.jpeg" alt="" class="hidden h-full w-full rounded-md object-cover lg:block" />
-            </div>
-          </div>
-          <div class="absolute inset-0 bg-slate-950/75"></div>
-          <div class="relative mx-auto flex min-h-[320px] max-w-screen-2xl flex-col items-center justify-center px-4 py-16 text-center sm:px-6 lg:px-8">
-            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">Where Ideas Become Impact</h1>
-            <p class="mt-4 max-w-2xl text-sm leading-6 text-slate-200 sm:text-base">
-              Advancing Knowledge, Connecting Ideas, and Transforming Research into Meaningful Societal Impact Globally
-            </p>
-          </div>
-        </div>
+      <section class="bg-white px-4 py-8 sm:px-6 lg:px-8">
+        <div class="relative isolate mx-auto min-h-[520px] max-w-screen-xl overflow-hidden rounded-lg bg-slate-950 shadow-sm ring-1 ring-slate-200">
+          <video
+            class="absolute inset-0 h-full w-full object-cover"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="/images/1.jpg"
+            aria-hidden="true"
+          >
+            <source src="https://videos.pexels.com/video-files/20594652/20594652-hd_1920_1080_24fps.mp4" type="video/mp4" />
+          </video>
+          <div class="absolute inset-0 bg-slate-950/62"></div>
 
-        <div class="mx-auto max-w-screen-xl px-6 py-8 sm:px-8 lg:px-10">
-          <form id="catalog-filters" class="grid grid-cols-1 gap-3 md:grid-cols-4" autocomplete="off">
-            <label class="block">
-              <span class="sr-only">Cari judul atau penulis</span>
-              <input
-                id="search-input"
-                type="search"
-                placeholder="Cari judul, penulis, kata kunci"
-                class="h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-slate-950 focus:ring-2 focus:ring-slate-200"
-              />
-            </label>
-            <label class="block">
-              <span class="sr-only">Kategori</span>
-              <select
-                id="category-filter"
-                class="h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-900 outline-none transition focus:border-slate-950 focus:ring-2 focus:ring-slate-200"
-              >
-                <option value="">Semua kategori</option>
-              </select>
-            </label>
-            <label class="block">
-              <span class="sr-only">Rentang harga</span>
-              <select
-                id="price-filter"
-                class="h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-900 outline-none transition focus:border-slate-950 focus:ring-2 focus:ring-slate-200"
-              >
-                <option value="">Semua harga</option>
-                <option value="under-100000">&lt; Rp 100.000</option>
-                <option value="100000-150000">Rp 100.000 - Rp 150.000</option>
-                <option value="over-150000">&gt; Rp 150.000</option>
-              </select>
-            </label>
-            <label class="block">
-              <span class="sr-only">Urutkan</span>
-              <select
-                id="sort-filter"
-                class="h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-900 outline-none transition focus:border-slate-950 focus:ring-2 focus:ring-slate-200"
-              >
-                <option value="latest">Terbaru</option>
-                <option value="title">Judul A-Z</option>
-                <option value="price-asc">Harga termurah</option>
-                <option value="price-desc">Harga termahal</option>
-              </select>
-            </label>
-          </form>
+          <div class="relative z-10 mx-auto flex min-h-[520px] max-w-4xl flex-col items-center justify-center px-5 py-16 text-center sm:px-8 lg:px-10">
+            <div class="max-w-3xl">
+              <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">Books That Stay With You</h1>
+              <p class="mt-5 max-w-2xl text-sm leading-6 text-slate-100 sm:text-base">
+                Connecting readers with meaningful ideas and lasting impact
+              </p>
+            </div>
+
+            <form
+              id="catalog-filters"
+              class="mt-8 w-full max-w-xl"
+              autocomplete="off"
+            >
+              <label class="relative block">
+                <span class="sr-only">Cari judul, penulis, atau kata kunci</span>
+                <input
+                  id="search-input"
+                  type="search"
+                  placeholder="Cari judul, penulis, kata kunci"
+                  class="h-12 w-full rounded-md border border-white/60 bg-white/95 px-4 pr-12 text-sm text-slate-900 shadow-md shadow-slate-950/20 outline-none transition placeholder:text-slate-400 focus:border-white focus:ring-2 focus:ring-white/40"
+                />
+                <span class="pointer-events-none absolute inset-y-0 right-4 flex items-center text-slate-400">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </span>
+              </label>
+            </form>
+          </div>
         </div>
       </section>
 

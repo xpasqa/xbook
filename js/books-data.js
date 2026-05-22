@@ -119,23 +119,6 @@ export const sampleBooks = [np
     sort_order: 8,
   },
   {
-    slug: "perbandingan-administrasi-negara",
-    title: "Perbandingan Administrasi Negara / Sektor Publik",
-    author: "Fadjar Trisakti",
-    category: "Administrasi Publik",
-    price: 60000,
-    isbn: "Dalam Proses Pengajuan",
-    short_description: "Perbandingan sistem administrasi publik lintas konteks negara dan sektor publik.",
-    synopsis:
-      "Bagaimana negara mengelola pemerintahan yang efektif di tengah perbedaan budaya, politik, dan sistem sosial? Buku Perbandingan Administrasi Negara/Sektor Publik menghadirkan jawaban melalui pendekatan yang jelas dan mudah dipahami. Dengan menggabungkan konsep dasar, teori, dan contoh perbandingan nyata, buku ini membantu pembaca melihat bagaimana sistem administrasi negara bekerja di berbagai negara. Pembahasan mencakup birokrasi, sektor publik, hubungan pusat dan daerah, hingga dinamika administrasi di kawasan ASEAN. Ringkas, sistematis, dan relevan, buku ini cocok untuk mahasiswa, akademisi, maupun pembaca umum yang ingin memahami bagaimana pemerintahan dijalankan dan bagaimana praktik terbaik dapat dipelajari dari negara lain.",
-    keywords: ["administrasi publik", "sektor publik", "birokrasi", "pelayanan publik", "tata kelola"],
-    cover_url: "/images/ansp-fajar-1.jpeg",
-    gallery_urls: ["/images/ansp-fajar-1.jpeg", "/images/ansp-fajar-3.jpeg"],
-    buy_url: "",
-    published: true,
-    sort_order: 9,
-  },
-  {
     slug: "politik-global",
     title: "Politik Global Kontemporer",
     author: "Dimas Prakoso, M.I.P.",

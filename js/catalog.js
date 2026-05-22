@@ -37,12 +37,14 @@ async function initCatalog() {
 function applyQueryFilters() {
   const params = new URLSearchParams(window.location.search);
   state.filters.search = (params.get("q") || "").trim().toLowerCase();
-  state.filters.category = params.get("category") || "";
-  state.filters.price = params.get("price") || "";
-  state.filters.sort = params.get("sort") || "latest";
+  state.filters.category = categoryFilter ? params.get("category") || "" : "";
+  state.filters.price = priceFilter ? params.get("price") || "" : "";
+  state.filters.sort = sortFilter ? params.get("sort") || "latest" : "latest";
 }
 
 function renderCategories() {
+  if (!categoryFilter) return;
+
   const categories = [...new Set(state.books.map((book) => book.category).filter(Boolean))].sort((a, b) =>
     a.localeCompare(b, "id")
   );
@@ -53,25 +55,25 @@ function renderCategories() {
 }
 
 function bindFilters() {
-  searchInput.addEventListener("input", (event) => {
+  searchInput?.addEventListener("input", (event) => {
     state.filters.search = event.target.value.trim().toLowerCase();
     updateQueryString();
     renderCatalog();
   });
 
-  categoryFilter.addEventListener("change", (event) => {
+  categoryFilter?.addEventListener("change", (event) => {
     state.filters.category = event.target.value;
     updateQueryString();
     renderCatalog();
   });
 
-  priceFilter.addEventListener("change", (event) => {
+  priceFilter?.addEventListener("change", (event) => {
     state.filters.price = event.target.value;
     updateQueryString();
     renderCatalog();
   });
 
-  sortFilter.addEventListener("change", (event) => {
+  sortFilter?.addEventListener("change", (event) => {
     state.filters.sort = event.target.value;
     updateQueryString();
     renderCatalog();
@@ -79,18 +81,18 @@ function bindFilters() {
 }
 
 function syncFilterControls() {
-  searchInput.value = state.filters.search;
-  categoryFilter.value = state.filters.category;
-  priceFilter.value = state.filters.price;
-  sortFilter.value = state.filters.sort;
+  if (searchInput) searchInput.value = state.filters.search;
+  if (categoryFilter) categoryFilter.value = state.filters.category;
+  if (priceFilter) priceFilter.value = state.filters.price;
+  if (sortFilter) sortFilter.value = state.filters.sort;
 }
 
 function updateQueryString() {
   const params = new URLSearchParams();
   if (state.filters.search) params.set("q", state.filters.search);
-  if (state.filters.category) params.set("category", state.filters.category);
-  if (state.filters.price) params.set("price", state.filters.price);
-  if (state.filters.sort && state.filters.sort !== "latest") params.set("sort", state.filters.sort);
+  if (categoryFilter && state.filters.category) params.set("category", state.filters.category);
+  if (priceFilter && state.filters.price) params.set("price", state.filters.price);
+  if (sortFilter && state.filters.sort && state.filters.sort !== "latest") params.set("sort", state.filters.sort);
 
   const query = params.toString();
   const url = query ? `${window.location.pathname}?${query}` : window.location.pathname;
