@@ -35,6 +35,7 @@ async function renderHeader(activeKey) {
             .join("")}
         </nav>
         <div id="auth-actions" class="flex items-center gap-2">
+          <a href="/cek-invoice.html" class="rounded-md border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">Status Pesanan</a>
           <a href="/login.html" class="rounded-md border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">Login</a>
         </div>
       </div>
@@ -48,6 +49,7 @@ async function renderHeader(activeKey) {
   if (!actions || !session) return;
 
   actions.innerHTML = `
+    <a href="/cek-invoice.html" class="rounded-md border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">Status Pesanan</a>
     <a href="/dashboard.html" class="rounded-md bg-slate-950 px-3 py-2 text-sm font-semibold text-white transition hover:bg-teal-600">Dashboard</a>
     <button id="logout-button" type="button" class="rounded-md border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">Logout</button>
   `;
