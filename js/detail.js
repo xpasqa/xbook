@@ -145,7 +145,6 @@ function renderOrderModal(book) {
         <div class="flex items-start justify-between gap-4 border-b border-slate-200 px-5 py-4">
           <div>
             <h2 class="text-lg font-bold text-slate-950">Order Buku</h2>
-            <p class="mt-1 text-sm text-slate-500">Isi data pengiriman untuk membuat invoice.</p>
           </div>
           <button type="button" data-close-order class="rounded-md px-2 py-1 text-xl leading-none text-slate-500 transition hover:bg-slate-100 hover:text-slate-950" aria-label="Tutup modal">&times;</button>
         </div>
@@ -348,7 +347,7 @@ function bindOrderModal(book) {
     const totalAmount = bookPrice + shippingCost;
 
     if (shippingLabel) {
-      shippingLabel.textContent = rate ? `${formatOrderAmount(rate.cost)} (${rate.destinationCity})` : "Pilih provinsi";
+      shippingLabel.textContent = rate ? formatOrderAmount(rate.cost) : "Pilih provinsi";
     }
     if (totalLabel) totalLabel.textContent = formatOrderAmount(totalAmount);
   });
