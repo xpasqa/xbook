@@ -168,9 +168,9 @@ function renderBookCard(book) {
       <a href="${detailUrl}" class="block overflow-hidden bg-slate-100">
         <img src="${book.cover_url}" alt="${escapeHtml(book.cover_alt)}" class="aspect-[3/4] w-full object-cover transition duration-300 group-hover:scale-[1.03]" loading="lazy" />
       </a>
-      <div class="p-4">
-        <a href="${detailUrl}" class="line-clamp-2 text-sm font-bold leading-5 text-slate-950 hover:text-teal-700">${escapeHtml(book.title)}</a>
-        <p class="mt-1 line-clamp-1 text-xs leading-5 text-slate-500">${escapeHtml(book.author)}</p>
+      <div class="p-3 sm:p-4">
+        <a href="${detailUrl}" class="line-clamp-2 text-xs font-bold leading-4 text-slate-950 hover:text-teal-700 sm:text-sm sm:leading-5">${escapeHtml(book.title)}</a>
+        <p class="mt-1 line-clamp-1 text-[11px] leading-4 text-slate-500 sm:text-xs sm:leading-5">${escapeHtml(book.author)}</p>
       </div>
     </article>
   `;
