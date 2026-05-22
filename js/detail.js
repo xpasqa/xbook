@@ -130,6 +130,15 @@ function renderDetail(book) {
     </div>
 
     ${renderOrderModal(book)}
+    <div class="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 px-4 py-3 shadow-[0_-8px_24px_rgba(15,23,42,0.12)] backdrop-blur md:hidden">
+      <button
+        type="button"
+        data-open-order
+        class="inline-flex w-full items-center justify-center rounded-md bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-teal-600"
+      >
+        Beli Buku
+      </button>
+    </div>
   `;
 
   bindGallery();
@@ -311,7 +320,7 @@ function bindGallery() {
 
 function bindOrderModal(book) {
   const modal = detail.querySelector("#order-modal");
-  const openButton = detail.querySelector("[data-open-order]");
+  const openButtons = detail.querySelectorAll("[data-open-order]");
   const form = detail.querySelector("#order-form");
   const payment = detail.querySelector("#order-payment");
   const alertBox = detail.querySelector("[data-order-alert]");
@@ -329,12 +338,14 @@ function bindOrderModal(book) {
   const bookPrice = Number(book.price || 0);
   let activeOrder = null;
 
-  if (!modal || !openButton || !form) return;
+  if (!modal || !form) return;
 
-  openButton.addEventListener("click", () => {
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
-    modal.setAttribute("aria-hidden", "false");
+  openButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      modal.setAttribute("aria-hidden", "false");
+    });
   });
 
   modal.querySelectorAll("[data-close-order]").forEach((button) => {
